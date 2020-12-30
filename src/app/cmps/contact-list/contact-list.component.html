@@ -1,7 +1,0 @@
-<ul *ngIf="contacts" class="contact-list clean-list flex wrap auto-center">
-    <li *ngFor="let contact of contacts" [key]="contact._id">
-        <a class="hover-pointer btn" [routerLink]="'/contact/'+contact._id">
-            <contact-preview [contact]="contact"></contact-preview>
-        </a>
-    </li>
-</ul>
