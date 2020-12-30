@@ -1,0 +1,35 @@
+@import '../../../assets/scss/setup/variables';
+.app-header {
+    position: sticky;
+    top: 0;
+    background-color: $clr3;
+    height: 50px;
+    padding: 0 20px;
+    color: $clr1;
+    .active {
+        border-bottom: 1px solid $clr6;
+    }
+    & .main-nav {
+        a {
+            // border-bottom: 1px solid $clr3;
+            margin: 5px 10px;
+            // padding-bottom: 5px;
+            text-align: center;
+            font-size: 14px;
+            &:hover {
+                border-bottom: 1px solid $clr6;
+            }
+        }
+    }
+    .logo {
+        margin: 5px 10px;
+        padding: 5px;
+        color: $clr1;
+        text-transform: uppercase;
+        font-family: Yellowtail-regular;
+        margin-left: 12px;
+        // color: $clr1;
+        color: $clr6;
+        font-size: 18px
+    }
+}

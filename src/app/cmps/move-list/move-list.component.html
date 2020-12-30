@@ -1,0 +1,8 @@
+<ul *ngIf="moves" class="move-list clean-list flex column auto-center ">
+    <li *ngFor="let move of moves" [key]="move.toId">
+        <a *ngIf="move" class="hover-pointer btn" [routerLink]="'/contact/'+move.toId">
+            <move-preview [move]="move"></move-preview>
+            <!-- <move-preview [btnValue]="value" [move]="move"></move-preview> -->
+        </a>
+    </li>
+</ul>

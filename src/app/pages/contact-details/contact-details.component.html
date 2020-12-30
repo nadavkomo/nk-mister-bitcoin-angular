@@ -1,0 +1,19 @@
+<div *ngIf="contact" class="contact-details flex column align-center">
+    <section class="btns flex justify-center">
+        <a class="hover-pointer btn" routerLink='/contact'><img src='../../../assets/icons/back.png' alt="" /></a>
+        <a class="hover-pointer btn" [routerLink]="'/contact/edit/' + contact._id"><img src='../../../assets/icons/edit.png' /></a>
+    </section>
+    <img class="contact-img" [src]="'https://robohash.org/' + contact._id" alt="" />
+    <h3>{{contact.name}}</h3>
+    <h3>{{contact.email}}</h3>
+    <h3>{{contact.phone}}</h3>
+    <h3><img src="../../../assets/icons/coins.png" alt="">BTC Coins: {{contact.coins}}</h3>
+    <transfer-fund (onAddMove)="onAddMove($event)" [contact]="contact" ></transfer-fund>
+    <p>{{errMsg}}</p>
+    <section *ngIf="currMoves() && currMoves().length > 0" class="moves-section flex column align-center">
+       <h3>Your moves:</h3>
+       <move-list [moves]="currMoves()" ></move-list>
+       <!-- <move-list [btnValue]="btnValue" [moves]="currMoves()" ></move-list> -->
+    </section>
+
+</div>

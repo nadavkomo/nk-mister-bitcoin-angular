@@ -1,0 +1,12 @@
+<section *ngIf="user" class="user-preview flex align-center column">
+    <section class="user-details flex column">
+        <h2>Welcome {{user.name}}</h2>
+        <h3><img src="../../../assets/icons/coins.png" />BTC Coins: {{user.coins}}</h3>
+        <h3><img src="../../../assets/icons/bitcoin.png" />USD: ${{((1/btnValue1) * user.coins).toFixed(2)}}</h3>
+    </section>
+    <section *ngIf="user.moves.length > 0" class="transfer-details flex column align-center">
+        <h3>Your last moves</h3>
+        <move-list [moves]="lastMoves()" ></move-list>
+        <!-- <move-list [btnValue]="btnValue1" [moves]="lastMoves()" ></move-list> -->
+    </section>
+</section>

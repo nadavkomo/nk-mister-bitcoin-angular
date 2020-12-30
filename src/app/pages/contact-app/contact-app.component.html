@@ -1,0 +1,9 @@
+<div class="contact-app flex column align-center">
+    <a class="hover-pointer add-btn btn" routerLink="/contact/edit"><img src='../../../assets/icons/plus.png' /></a>
+    <section *ngIf="contacts && !selectedContactId && !contactToEditId" class="filter flex column auto-center">
+        <h1>Contacts</h1>
+        <contact-filter (emitOnSetFilter)="onSetFilter($event)"></contact-filter>
+    </section>
+    <contact-list *ngIf="contacts" (onSelectContact)="selectContact($event)"
+        [contacts]="contacts"></contact-list>
+</div>
